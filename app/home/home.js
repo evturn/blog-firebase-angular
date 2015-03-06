@@ -9,7 +9,7 @@ angular.module('myApp.home', ['ngRoute', 'firebase'])
 		});
 }])
 
-.controller('HomeCtrl', ['$scope', 'CommonProp', '$location', '$firebaseAuth', function($scope, $location, CommonProp, $firebaseAuth) {
+.controller('HomeCtrl', ['$scope', '$location', 'CommonProp', '$firebaseAuth', function($scope, $location, CommonProp, $firebaseAuth) {
 	var firebaseObj = new Firebase("https://blogz-on-fire.firebaseio.com/");
 	var loginObj = $firebaseAuth(firebaseObj);
 
