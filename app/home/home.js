@@ -9,11 +9,11 @@ angular.module('myApp.home', ['ngRoute', 'firebase'])
 		});
 }])
 
-.controller('HomeCtrl', [function() {
+.controller('HomeCtrl', ['$scope', '$firebaseSimpleLogin', function() {
 	$scope.SignIn = function($scope) {
 		var username = $scope.user.email;
 		var password = $scope.user.password;
 	}
 	var firebaseObj = new Firebase("https://blogz-on-fire.firebaseio.com/");
-
+	var loginObj = $firebaseSimpleLogin(firebaseObj);
 }]);
