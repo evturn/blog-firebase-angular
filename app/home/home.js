@@ -9,7 +9,7 @@ angular.module('myApp.home', ['ngRoute', 'firebase'])
 		});
 }])
 
-.controller('HomeCtrl', ['$scope', '$firebaseAuth', function($scope, $firebaseAuth) {
+.controller('HomeCtrl', ['$scope', '$location', '$firebaseAuth', function($scope, $location, $firebaseAuth) {
 	var firebaseObj = new Firebase("https://blogz-on-fire.firebaseio.com/");
 	var loginObj = $firebaseAuth(firebaseObj);
 
@@ -24,6 +24,7 @@ angular.module('myApp.home', ['ngRoute', 'firebase'])
 		})
 		.then(function(user) {
 			console.log('Authentication successful');
+			$location.path('/welcome');
 		}, function(error) {
 			console.log('Authentication failure');
 		});
