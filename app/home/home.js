@@ -29,4 +29,15 @@ angular.module('myApp.home', ['ngRoute', 'firebase'])
 			console.log('Authentication failure');
 		});
 	}
-}]);
+}])
+.service('CommonProp', function() {
+  var user = '';
+  return {
+    getUser: function() {
+      return user;
+    },
+    setUser: function(value) {
+      user = value;
+    }
+  };
+});
