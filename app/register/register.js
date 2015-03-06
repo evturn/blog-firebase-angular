@@ -9,7 +9,7 @@ angular.module('myApp.register', ['ngRoute', 'firebase'])
     });
 }])
 
-.controller('RegisterCtrl', ['$scope', '$location', '$firebaseAuth', function($scope, $firebaseAuth) {
+.controller('RegisterCtrl', ['$scope', '$firebaseAuth', '$location', '$firebaseAuth', function($scope, $firebaseAuth) {
 	var firebaseObj = new Firebase("https://blogz-on-fire.firebaseio.com/");
 	var auth = $firebaseAuth(firebaseObj);
 
@@ -17,16 +17,16 @@ angular.module('myApp.register', ['ngRoute', 'firebase'])
  		if (!$scope.regForm.$invalid) {
  			var email = $scope.user.email;
  			var password = $scope.user.password;
- 			if (email && password) {
- 				auth.$createUser(email, password)
- 					.then(function() {
- 						console.log('User creation success');
- 						$location.path('/home');
- 					}, function(error) {
- 						console.log(error);
- 						$scope.regErrot = true;
- 						$scope.regErrorMessage = error.message;
- 					});
+        if (email && password) {
+          auth.$createUser(email, password)
+            .then(function() {
+              console.log('User creation success');
+              $location.path('/home');
+            }, function(error) {
+              console.log(error);
+              $scope.regError = true;
+              $scope.regErrorMessage = error.message;
+            });
  			}
  		}
  	};
