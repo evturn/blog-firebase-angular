@@ -14,4 +14,6 @@ angular.module('myApp.home', ['ngRoute', 'firebase'])
 		var username = $scope.user.email;
 		var password = $scope.user.password;
 	}
+	var firebaseObj = new Firebase("https://blogz-on-fire.firebaseio.com/");
+
 }]);
