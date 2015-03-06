@@ -9,12 +9,12 @@ angular.module('myApp.home', ['ngRoute', 'firebase'])
 		});
 }])
 
-.controller('HomeCtrl', ['$scope', '$firebaseSimpleLogin', function() {
+.controller('HomeCtrl', ['$scope', '$firebaseSimpleLogin', function($scope, $firebaseSimpleLogin) {
 	var firebaseObj = new Firebase("https://blogz-on-fire.firebaseio.com/");
 	var loginObj = $firebaseSimpleLogin(firebaseObj);
 
-	$scope.SignIn = function(event) {
-		event.preventDefault();
+	$scope.SignIn = function(e) {
+		e.preventDefault();
 		var username = $scope.user.email;
 		var password = $scope.user.password;
 
