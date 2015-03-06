@@ -9,6 +9,8 @@ angular.module('myApp.register', ['ngRoute'])
     });
 }])
 
-.controller('RegisterCtrl', [function() {
- 
+.controller('RegisterCtrl', ['$scope', function($scope) {
+ 	$scope.signUp = function() {
+
+ 	};
 }]);
