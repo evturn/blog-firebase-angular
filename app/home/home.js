@@ -10,5 +10,8 @@ angular.module('myApp.home', ['ngRoute', 'firebase'])
 }])
 
 .controller('HomeCtrl', [function() {
-
+	$scope.SignIn = function($scope) {
+		var username = $scope.user.email;
+		var password = $scope.user.password;
+	}
 }]);
