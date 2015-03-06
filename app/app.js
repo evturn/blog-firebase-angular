@@ -1,8 +1,11 @@
 'use strict';
 
 angular.module('myApp', [
-  'ngRoute'
+  'ngRoute',
+  'myApp.home'
 ]).
 config(['$routeProvider', function($routeProvider) {
-     
+     $routeProvider.otherwise({
+     		redirectTo: '/home'
+     });
 }]);
