@@ -10,7 +10,7 @@
   <link href="justified-nav.css" rel="stylesheet">
  
 </head>
-<body>
+<body ng-controller="HomeCtrl">
  
 <div class="container">
 
@@ -19,8 +19,8 @@
   </div>
   
   <form class="form-signin" role="form">
-    <input type="email" class="form-control" placeholder="Email address" required="" autofocus="">
-    <input type="password" class="form-control" placeholder="Password" required="">
+    <input ng-model="user.email" type="email" class="form-control" placeholder="Email address" required="" autofocus="">
+    <input ng-model="user.password" type="password" class="form-control" placeholder="Password" required="">
     <label class="checkbox">
       <a href="#"> Sign Up</a>
     </label>
