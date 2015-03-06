@@ -9,6 +9,6 @@ angular.module('myApp.welcome', ['ngRoute'])
   });
 }])
  
-.controller('WelcomeCtrl', ['$scope', function($scope) {
+.controller('WelcomeCtrl', ['$scope', 'CommonProp', function($scope, CommonProp) {
  
 }]);
