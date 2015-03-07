@@ -9,6 +9,8 @@ angular.module('myApp.addPost', ['ngRoute'])
   });
 }])
  
-.controller('AddPostCtrl', ['$scope', function($scope) {
- 
+.controller('AddPostCtrl', ['$scope', '$firebase', function($scope, $firebase) {
+ 	$scope.AddPost = function() {
+ 		var firebaseObj = new Firebase("https://blogz-on-fire.firebaseio.com/");
+ 	}
 }]);
