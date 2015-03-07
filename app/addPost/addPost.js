@@ -12,5 +12,9 @@ angular.module('myApp.addPost', ['ngRoute'])
 .controller('AddPostCtrl', ['$scope', '$firebase', function($scope, $firebase) {
  	$scope.AddPost = function() {
  		var firebaseObj = new Firebase("https://blogz-on-fire.firebaseio.com/");
+ 		var fb = $firebase(firebaseObj);
+
+ 		var title = $scope.article.title;
+ 		var post = $scope.article.post;
  	}
 }]);
