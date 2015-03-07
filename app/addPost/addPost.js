@@ -16,5 +16,14 @@ angular.module('myApp.addPost', ['ngRoute'])
 
  		var title = $scope.article.title;
  		var post = $scope.article.post;
+
+ 		fb.$push({
+    	title: title,
+	    post: post
+		}).then(function(ref) {
+		    console.log(ref);
+		}, function(error) {
+		    console.log("Error:", error);
+		});
  	}
 }]);
